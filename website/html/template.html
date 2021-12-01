@@ -9,7 +9,7 @@
     <meta name=description
         content="{% block description %}آکادمی پینگ پنگ توانا در غرب تهران با مربیان رسمی فدراسیون تنیس روی میز ایران، به آموزش علاقمندان می‌پردازد.{% endblock %}" />
     <meta name=keywords
-        content="{% block keywords %}پینگ پنگ, پینگ‌پنگ, پنگ پونگ, تنیس روی میز, باشگاه پینگ پنگ, آکادمی پینگ پنگ, باشگاه تنیس روی میز, آکادمی تنیس روی میز, باشگاه توانا, آکادمی توانا, آموزش پینگ پنگ, آموزش تنیس روی میز, غرب تهران, منطقه پنج تهران, منطقه 5 تهران{% endblock %}">
+        content="{% block keywords %}پینگ پنگ, پینگ‌پنگ, پنگ پونگ, تنیس روی میز, باشگاه پینگ پنگ, آکادمی پینگ پنگ, باشگاه تنیس روی میز, آکادمی تنیس روی میز, باشگاه توانا, آکادمی توانا, آموزش پینگ پنگ, آموزش تنیس روی میز{% endblock %}">
     <meta name=keywords
         content="table tennis, ping pong, sport club, sport academy, table tennis club, table tennis academy, ping pong club, ping pong academy, tavana, tavana club, tavana academy">
 
@@ -30,33 +30,31 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div>
-            <a class="navbar-brand" href="index.html"><i class="bi bi-house-door"></i> </a>
+            <a class="navbar-brand" href="/home"><i class="bi bi-house-door"></i> </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarAbout">
                 معرفی توانا
                 <i class="bi bi-list"></i>
             </button>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCourses">
-                کلاس‌ها و مسابقات <i class="bi bi-list"></i>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarServices">
+                خدمات <i class="bi bi-list"></i>
             </button>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNews">
                 اخبار <i class="bi bi-list"></i>
             </button>
             <div class="collapse" id="navbarAbout">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link" href="about.html">معرفی</a></li>
-                    <li><a class="nav-link" href="facilities.html">امکانات</a></li>
-                    <li><a class="nav-link" href="trainers.html">مربیان</a></li>
-                    <li><a class="nav-link" href="players.html">بازیکنان</a></li>
-                    <li><a class="nav-link" href="contact.html">راه‌های تماس</a></li>
+                    <li><a class="nav-link" href="/about">معرفی</a></li>
+                    <li><a class="nav-link" href="/coaches">مربیان</a></li>
+                    <li><a class="nav-link" href="/contact">راه‌های تماس</a></li>
                 </ul>
             </div>
-            <div class="collapse" id="navbarCourses">
+            <div class="collapse" id="navbarServices">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link" href="courses.html">کلاس‌های توانا</a></li>
-                    <li><a class="nav-link" href="freesession.html">سانس آزاد</a></li>
-                    <li><a class="nav-link" href="para.html">ویژه معلولان</a></li>
-                    <li><a class="nav-link" href="tournaments.html">مسابقات هفتگی</a></li>
-                    <li><a class="nav-link" href="rating.html">سیستم ریتینگ</a></li>
+                    <li><a class="nav-link" href="/courses.html">کلاس‌های توانا</a></li>
+                    <li><a class="nav-link" href="/freesession">سانس آزاد</a></li>
+                    <li><a class="nav-link" href="/para">ویژه معلولان</a></li>
+                    <li><a class="nav-link" href="/tournaments">مسابقات هفتگی</a></li>
+                    <li><a class="nav-link" href="/rating-system">سیستم ریتینگ</a></li>
                 </ul>
             </div>
             <div class="collapse" id="navbarNews">
@@ -127,8 +125,8 @@
     <!-- FOOTER -->
     <footer class="footer english-text">
         <span> &copy 2020-2022 Tavana Table Tennis Academy. </span>
-        <span> Powered by <a href="https://www.djangoproject.com/">
-                <img src="{% static 'django.png' %}" style="height: 1.25rem;" alt="django">
+        <span> Powered by <a href="https://www.djangoproject.com/" target=_blank>
+                <img src="{% static 'assets/django.png' %}" style="height: 1.25rem;" alt="django">
             </a> </span>
     </footer>
 </body>

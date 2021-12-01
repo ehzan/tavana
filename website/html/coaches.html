@@ -2,29 +2,29 @@
 {% load static %}
 
 {% block title %}مربیان آکادمی توانا{% endblock %}
-{% block description %}کادر مربیگیری آکادمی پینگ پنگ توانا{% endblock %}
+{% block description %}
+آکادمی توانا از کادر مربیان زیر برای پرورش بازیکنان سطح حرفه‌ای و علاقمندان آماتور تنیس روی میز
+بهره می‌برد.
+{% endblock %}
 {% block keywords %}مربی پینگ پنگ, مربی تنیس روی میز, آموزش پینگ پنگ, آموزش تنیس روی میز, علی لطفی{% endblock %}
 
-{% block style&script %}
-{% endblock %}
-
 {% block main %}
-<div class="container-fluid">
+<div class="container">
     <h1>مربیان آکادمی توانا</h1>
     <p>آکادمی توانا از کادر مربیان زیر برای پرورش بازیکنان سطح حرفه‌ای و علاقمندان آماتور تنیس روی میز بهره می‌برد:
     </p>
     {% for category, coaches in toc.items %}
-        {{ category }}<br>
-        <ul>
+    {{ category }}<br>
+    <ul>
         {% for coach in coaches %}
         <li> <a href="#{{ coach.english_name }}">{{ coach.persian_name }}</a> </li>
         {% endfor %}
-        </ul>
+    </ul>
     {% endfor %}
 
     {% for coach in coaches %}
     <hr>
-    <img src="{% static 'photos/' %}{{coach.english_name}}.jpg" alt="{{ coach.english_name }}"
+    <img src="{% static 'assets/' %}{{coach.english_name}}.jpg" alt="{{ coach.english_name }}"
         class="{% if forloop.counter|divisibleby:2 %}img-rounded float-right{% else %}img-rounded float-left{% endif %}">
     <a id="{{ coach.english_name }}"></a>
     <h2>{{ coach.persian_name }}</h2>

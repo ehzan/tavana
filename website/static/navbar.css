@@ -9,7 +9,7 @@
 
 .navbar-toggler {
   margin: .2rem .2rem;
-  padding: .3rem .3rem;
+  padding: .2rem .3rem;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.3rem;
@@ -32,7 +32,7 @@
 
 .navbar-brand {
   /* margin-left: 1rem; */
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: lavender;
 }
 
