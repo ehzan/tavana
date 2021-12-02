@@ -24,6 +24,10 @@ def contact(request):
     return render(request, 'contact.html')
 
 
+def para(request):
+    return render(request, 'para.html')
+
+
 def tournaments(request):
     return render(request, 'tournaments.html')
 
