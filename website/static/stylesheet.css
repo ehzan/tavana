@@ -1,11 +1,12 @@
 @charset "UTF-8";
-@import url('notonaskharabicui.css');
-/* @import url('https://fonts.googleapis.com/css?family=Calibri:400,700,400italic,700italic'); */
+@import url('font/notonaskharabicui.css');
+@import url('font/calibri.css');
 
 body {
     margin: 0;
-    font-family: 'Noto Naskh Arabic UI', Calibri, Arial;
-    font-size: 1.2rem;
+    /* font-family: myFirstFont, 'Noto Naskh Arabic UI', Calibri, Times, Arial; */
+    font-family: Calibri, 'Noto Naskh Arabic UI', Calibri, serif;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.5;
     /* -webkit-text-size-adjust: 100%; */
@@ -13,7 +14,7 @@ body {
 
 .english-text {
   direction: ltr;
-  font-family: Calibri, sans-serif;
+  /* font-family: Calibri, Times, sans-serif; */
 }
 
 h1 {
