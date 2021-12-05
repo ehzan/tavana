@@ -7,7 +7,7 @@ import mimetypes
 
 
 def home(request):
-    return render(request, 'template.html')
+    return render(request, 'home.html')
 
 
 def coaches(request):

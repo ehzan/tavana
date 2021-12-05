@@ -1,0 +1,69 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}آکادمی پینگ پنگ توانا
+{% endblock %}
+{% block description %}
+آکادمی توانا در غرب تهران با مربیان رسمی فدراسیون تنیس روی میز ایران، به آموزش علاقمندان می‌پردازد.
+{% endblock %}
+{% block style&script %}
+<!-- <link rel=stylesheet type="text/css" href="{% static 'bootstrap.rtl.css' %}"> -->
+<link rel=stylesheet type="text/css" href="{% static 'carousel.css' %}">
+{% endblock %}
+
+{% block main %}
+<!-- header -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
+        <button data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+        <button data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <button class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <i class="bi bi-chevron-right" style="font-size: 2rem;"></i>
+    </button>
+    <button class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+        <i class="bi bi-chevron-left" style="font-size: 2rem;"></i>
+    </button>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="carousel-caption">
+                <h1>آکادمی پینگ پنگ توانا</h1>
+                <p>
+                    تهران، انتهای بزرگراه ستاری شمال، میدان دانشگاه، خیابان شعرا، مجتمع علامه طباطبایی
+                    <br>
+                    تلفن: ۴۴۸۲۲۷۸۷-۰۲۱ / ۸۹۸۰۷۲۰-۰۹۱۲
+                </p>
+                <p><a href="#"><i class="bi bi-geo-alt"></i> موقعیت روی نقشه</a> </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <h1>دوره‌های آموزشی <i class="bi bi-clipboard-check"></i></h1>
+                <p>
+                    آکادمی پینگ پنگ توانا دوره‌های آموزشی خصوصی، نیمه خصوصی و عمومی را برای رده‌های سنی مختلف آقایان
+                    و بانوان
+                    برگزار می‌کند.
+                </p>
+                <p><a href="#"><i class="bi bi-three-dots-vertical"></i>ادامه</a> </p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <h1>مسابقات هفتگی <i class="bi bi-trophy"></i></h1>
+                <p>
+                    مسابقات هفتگی اغلب در روزهای جمعه (با اعلام قبلی) در آکادمی توانا برگزار می‌شود.
+                    به منظور تشویق علاقمند و تقویت بازیکنان آکادمی علاوه بر جوایز هفتگی، جوایز ارزنده‌ای نیز در
+                    پایان فصل به
+                    برترین‌ها اهدا می‌شود. </p>
+                <p><a href="#"><i class="bi bi-three-dots-vertical"></i>ادامه</a> </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -4,7 +4,6 @@
   width: 96%;
   padding: .5rem 2%;
   background-color: #205050;
-  color: lavender;
 }
 
 .navbar-toggler {
@@ -13,33 +12,22 @@
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.3rem;
-  transition: box-shadow 0.15s ease-in-out;
-  color: lavender;
+  color: white;
+  opacity: 0.9;
   border-color: silver;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .navbar-toggler {
-    transition: none;
-  }
-}
-
 .navbar-toggler:hover {
-  color: white;
   border-color: white;
+  opacity: 1;
   font-weight: 600;
 }
 
 .navbar-brand {
-  /* margin-left: 1rem; */
   font-size: 1.5rem;
-  color: lavender;
-}
-
-.navbar-brand:hover {
   color: white;
-  font-weight: 600;
   text-decoration: none;
+  opacity: 0.9;
 }
 
 .navbar-nav {
@@ -53,31 +41,20 @@
 
 .nav-link {
   display: block;
-  padding-left: 0;
-  padding-right: 0;
   padding: 0.5rem 1rem;
-  text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  color: lavender;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-link {
-    transition: none;
-  }
-}
-
-.nav-link:hover, .nav-link:focus {
   color: white;
-  font-weight: 600;
   text-decoration: none;
+  opacity: 0.9;
 }
 
-/* .navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 1;
-  align-items: center;
-} */
+.navbar-brand:hover,
+.nav-link:hover {
+  color: white;
+  text-decoration: none;
+  opacity: 1;
+  font-weight: 600;
+}
+
 .collapse:not(.show) {
   display: none;
 }
