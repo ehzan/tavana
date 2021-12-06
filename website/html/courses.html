@@ -1,0 +1,32 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}کلاس‌های آکادمی توانا
+{% endblock %}
+{% block description %}
+کلاس‌ها و دوره‌های آموزشی آکادمی پینگ پنگ توانا
+{% endblock %}
+{% block keywords %}مربی پینگ پنگ, مربی تنیس روی میز, آموزش پینگ پنگ, آموزش تنیس روی میز, کلاس پینگ پنگ,
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h1>تقویم آموزشی</h1>
+    <img src="{% static 'assets/calendar.png' %}" style="max-width: 100%;">
+    <br><br>
+    {% for smeseter in semesters %}
+    <p> کلاس‌های آموزشی آکادمی توانا در {{ smeseter.title }} به قرار زیر است:
+    </p>
+    <ul>
+        {% for course in courses %}
+        {% if course.semester == smeseter %}
+        <li>
+        {{ course.title }}
+        <div style="margin-top: -1rem;">{{ course.description|safe|linebreaks }}</div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}

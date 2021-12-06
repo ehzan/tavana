@@ -7,7 +7,9 @@ import mimetypes
 
 
 def home(request):
-    return render(request, 'home.html')
+    highlights = Highlight.objects.filter(visible=True)
+    print(highlights)
+    return render(request, 'home.html', context={'highlights': highlights}, )
 
 
 def coaches(request):
@@ -17,11 +19,25 @@ def coaches(request):
            for category in categories}
     coaches = Coach.objects.all()
 
-    return render(request, 'coaches.html', context={'toc': toc, 'coaches': coaches})
+    return render(request, 'coaches.html', context={'toc': toc, 'coaches': coaches}, )
 
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+def courses(request):
+    semesters = Semester.objects.filter(active=True)
+    courses = Course.objects.filter(semester__active=True)
+    return render(request, 'courses.html', context={'semesters': semesters, 'courses': courses}, )
+
+
+def free_session(request):
+    semester = Semester.objects.filter(active=True).first()
+    print(semester)
+    freeSession = Course.objects.get(semester=semester, title='سانس آزاد')
+    freeSession.description = freeSession.description.replace(':', ' ')
+    return render(request, 'free-session.html', context={'freeSession': freeSession}, )
 
 
 def para(request):

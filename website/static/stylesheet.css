@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* @import url('font/notonaskharabicui.css'); */
+@import url('font/notonaskharabicui.css');
 @import url('font/calibri.css');
 
 body {
@@ -82,7 +82,8 @@ hr {
   width: 96%;
   padding: .5rem 2%;
   background-color: #205050;
-  color: lavender;
+  color: white;
+  opacity: 0.9;
 }
 
 .container {

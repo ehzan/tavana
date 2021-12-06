@@ -4,7 +4,7 @@
 {% block title %}مربیان آکادمی توانا
 {% endblock %}
 {% block description %}
-آکادمی توانا از کادر مربیان زیر برای پرورش بازیکنان سطح حرفه‌ای و علاقمندان آماتور تنیس روی میز
+آکادمی پینگ پنگ توانا از کادر مربیان زیر برای پرورش بازیکنان سطح حرفه‌ای و علاقمندان آماتور تنیس روی میز
 بهره می‌برد.
 {% endblock %}
 {% block keywords %}مربی پینگ پنگ, مربی تنیس روی میز, آموزش پینگ پنگ, آموزش تنیس روی میز, علی لطفی,
@@ -26,7 +26,7 @@
 
     {% for coach in coaches %}
     <hr>
-    <img src="{% static 'assets/' %}{{coach.english_name}}.jpg" alt="{{ coach.english_name }}"
+    <img src="{% static 'images/' %}{{coach.english_name}}.jpg" alt="{{ coach.english_name }}"
         class="{% if forloop.counter|divisibleby:2 %}img-rounded float-right{% else %}img-rounded float-left{% endif %}">
     <a id="{{ coach.english_name }}"></a>
     <h2>{{ coach.persian_name }}</h2>

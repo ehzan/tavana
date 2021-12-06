@@ -7,9 +7,11 @@ urlpatterns = [
     path('coaches/', views.coaches),
     path('contact/', views.contact),
 
+    path('courses/', views.courses),
+    path('free-session/', views.free_session),
     path('para/', views.para),
     path('tournaments/', views.tournaments),
     path('rating-system/', views.rating_system),
 
-    path('files/<str:filename>', views.file_delivery, name='file')
+    path('files/<str:filename>', views.file_delivery, name='file'),
 ]
