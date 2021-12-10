@@ -1,46 +1,16 @@
 {% extends 'template.html' %}
 {% load static %}
 
-{% block title %}سانس آزاد پینگ پنگ
-{% endblock %}
-{% block description %}
-دارای معلولیت باشد.
-{% endblock %}
-{% block keywords %}سانس آزاد, اجاره میز تنیس روی میز, اجاره میز پینگ پنگ, اجاره میز پینگ پونگ, سالن تنیس روی میز, سالن
-پینگ پنگ, سالن پینگ پونگ
-{% endblock %}
+{% block title %}سانس آزاد پینگ پنگ{% endblock %}
 
 {% block style&script %}
-<style>
-    .fig-small {
-        float: left;
-        width: 400px;
-        margin: 0 1.5rem 1.5rem 0;
-    }
-
-    @media (max-width: 768px) {
-        .fig-small {
-            width: 100%;
-            margin-right: 0;
-        }
-    }
-</style>
+<link rel=stylesheet type="text/css" href="/static/pages.css">
 {% endblock %}
 
 {% block main %}
 <div class="container">
-    <h1>سانس آزاد</h1>
-    <p>
-        آکادمی پینگ پنگ توانا علاوه بر دوره‌های آموزشی، امکان اجاره میز در ساعات آزاد را نیز در اختیار دوست‌داران این
-        رشته قرار می‌دهد. علاقمندان می‌توانند به صورت دو نفره یا چهارنفره از میز استفاده کنند. برای این منظور لازم است
-        پیش از مراجعه، با آکادمی تماس گرفته و ساعت مورد نظر خود را رزرو کنید.
-        <br>
-        در {{ freeSession.semester }}، از ساعت ۱۰ تا ۲۲ {{ freeSession.description }} است.
-    </p>
-    <figure class="fig-small">
-        <img src="{% static 'images/Tavana02.jpg' %}" style="width:100%; border-radius: 0.5rem;">
-        </figcaption>
-    </figure>
-
+    <h1>{{ data.title }}</h1>
+    {{ data.content|safe|linebreaks }}
 </div>
+<br>
 {% endblock %}

@@ -1,14 +1,11 @@
 {% extends 'template.html' %}
 {% load static %}
 
-{% block title %}آکادمی پینگ پنگ توانا
-{% endblock %}
-{% block description %}
-آکادمی توانا در غرب تهران با مربیان رسمی فدراسیون تنیس روی میز ایران، به آموزش علاقمندان می‌پردازد.
-{% endblock %}
+{% block title %}آکادمی پینگ پنگ توانا{% endblock %}
+
 {% block style&script %}
-<!-- <link rel=stylesheet type="text/css" href="{% static 'bootstrap.rtl.css' %}"> -->
-<link rel=stylesheet type="text/css" href="{% static 'carousel.css' %}">
+<!-- <link rel=stylesheet type="text/css" href="/static/bootstrap.rtl.css"> -->
+<link rel=stylesheet type="text/css" href="/static/carousel.css">
 {% endblock %}
 
 {% block main %}
@@ -24,8 +21,8 @@
     <div class="carousel-indicators">
         {% for highlight in highlights %}
         <button data-bs-target="#myCarousel" data-bs-slide-to="{{ forloop.counter0 }}"
-        class="{% if forloop.first %} active {% endif %}"></button>
-       {% endfor %} 
+            class="{% if forloop.first %} active {% endif %}"></button>
+        {% endfor %}
     </div>
 
     <div class="carousel-inner">

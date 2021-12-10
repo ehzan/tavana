@@ -60,3 +60,18 @@ class Course(models.Model):
 
     def __str__(self):
         return '{} ({})'.format(self.title, self.semester)
+
+
+class Page(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    title = models.CharField(max_length=1000, null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
+    image_filename_1 = models.CharField(max_length=50, null=True, blank=True)
+    image_caption_1 = models.CharField(max_length=1000, null=True, blank=True)
+    image_filename_2 = models.CharField(max_length=50, null=True, blank=True)
+    image_caption_2 = models.CharField(max_length=1000, null=True, blank=True)
+    image_filename_3 = models.CharField(max_length=50, null=True, blank=True)
+    image_caption_3 = models.CharField(max_length=1000, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

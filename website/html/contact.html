@@ -1,13 +1,7 @@
 {% extends 'template.html' %}
 {% load static %}
 
-{% block title %}راه‌های تماس آکادمی توانا
-{% endblock %}
-{% block description %}
-آدرس، شماره تماس و راه‌های ارتباطی آکادمی پینگ پنگ توانا
-{% endblock %}
-{% block keywords %}غرب تهران, منطقه پنج تهران, منطقه 5 تهران,
-{% endblock %}
+{% block title %}راه‌های تماس آکادمی توانا{% endblock %}
 
 {% block style&script %}
 <style>
@@ -39,13 +33,13 @@
 
     .map-frame {
         flex: 0 0 auto;
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         width: 100%;
-        height: 70vh;
+        height: 75vh;
         max-width: 600px;
     }
 
-    @media (min-width: 750px) {
+    @media (min-width: 768px) {
         .col-lg-5 {
             width: 45%;
         }
@@ -53,14 +47,13 @@
         .map-frame {
             width: 52%;
             margin-right: 3%;
-            height: 70vh;
         }
     }
 </style>
 {% endblock %}
 
 {% block main %}
-<div class="container flex-wrap" style="align-items:center; justify-content:center; height: 100%;">
+<div class="container flex-wrap" style="justify-content:center;">
     <div class="col-lg-5">
         <h1>آکادمی پینگ پنگ توانا</h1>
         <p> <a href="https://goo.gl/maps/fxpGx7f8Jn5qj8Dk6" class="list-a" target=_blank>
@@ -77,10 +70,10 @@
                     021-44822787
                 </span>
             </a> </p>
-        <p> <a href="https://wa.me/989128980720" class="list-a" target=_blank>
+        <p> <a href="tel:+989128980720" class="list-a" target=_blank>
                 <i class="list-icon bi-whatsapp"></i>
                 <span>
-                    <strong> واتسپ: </strong> <br>
+                    <strong> تلفن همراه: </strong> <br>
                     0912-8980720
                 </span>
             </a> </p>
