@@ -4,6 +4,7 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('', views.home),
+
     path('about/', views.about),
     path('coaches/', views.coaches),
     path('contact/', views.contact),
@@ -13,6 +14,10 @@ urlpatterns = [
     path('para/', views.para),
     path('tournaments/', views.tournaments),
     path('rating-system/', views.rating_system),
+
+    path('news/', views.news),
+    # path('videos/', views.videos),
+    # path('live/', views.live),
 
     path('files/<str:filename>', views.file_delivery, name='file'),
 ]

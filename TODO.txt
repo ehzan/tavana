@@ -1,0 +1,14 @@
+pdf view in browser
+google map
+carousel
+first page
+galery
+news
+video cast
+players
+saffari check
+chrome check
+email
+deploy
+host & domain
+docker

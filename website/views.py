@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from website.models import *
 import mimetypes
+import jdatetime
 
 # Create your views here.
 
@@ -65,6 +66,13 @@ def tournaments(request):
 
 def rating_system(request):
     return render(request, 'rating-system.html', context={'data': get_page_data('rating-system')}, )
+
+
+def news(request):
+    print(jdatetime.date.today())
+    news1 = News.objects.all().values_list()
+    print(news1)
+    return render(request, 'news.html', context={'data': get_page_data('rating-system')}, )
 
 
 def file_delivery(request, filename):
