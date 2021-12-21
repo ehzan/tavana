@@ -26,11 +26,13 @@ class Coach(models.Model):
 class Highlight(models.Model):
     title = models.CharField(max_length=1000)
     content = models.TextField(null=True, blank=True)
+    icon = models.CharField(max_length=1000, null=True, blank=True)
     image_filename = models.CharField(max_length=50, null=True, blank=True)
     link = models.CharField(max_length=1000, null=True, blank=True)
     link_caption = models.CharField(max_length=1000, default='more‥')  # …
+    header = models.BooleanField(default=False)
+    body = models.BooleanField(default=False)
     order = models.IntegerField(default=1)
-    visible = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['order', ]

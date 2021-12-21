@@ -8,7 +8,7 @@ import jdatetime
 
 
 def home(request):
-    highlights = Highlight.objects.filter(visible=True)
+    highlights = Highlight.objects.filter(header=True)
     print(highlights)
     return render(request, 'home.html', context={'highlights': highlights}, )
 
@@ -70,9 +70,10 @@ def rating_system(request):
 
 def news(request):
     print(jdatetime.date.today())
-    news1 = News.objects.all().values_list()
-    print(news1)
-    return render(request, 'news.html', context={'data': get_page_data('rating-system')}, )
+    header_items = Highlight.objects.filter(header=True)
+    body_items = Highlight.objects.filter(body=True)
+    print(header_items)
+    return render(request, 'sidebar.html', context={'header_items': header_items, 'body_items': body_items}, )
 
 
 def file_delivery(request, filename):

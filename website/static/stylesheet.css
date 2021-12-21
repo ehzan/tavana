@@ -2,12 +2,21 @@
 @import url('font/notonaskharabicui.css');
 @import url('font/calibri.css');
 
+:root {
+  --gutter-x: 5%;
+  --gutter-y: 1rem;
+  --dark-bg: #205050;
+  --ligh-bg: Lavender;
+  /* #c6e6e6; */
+  --on-dark: Lavender;
+}
+
 body {
     margin: 0;
     font-family: 'Noto Naskh Arabic UI', Calibri, sans-serif;
     font-size: 1.2rem;
-    font-weight: 400;
     line-height: 1.5;
+    font-weight: 400;
     /* -webkit-text-size-adjust: 100%; */
 }
 
@@ -19,13 +28,13 @@ body {
 h1 {
   font-size: 140%;
   font-weight: 800;
-  margin: 1.5rem 0 0 0;
+  margin: 1.5rem 0;
 }
 
 h2 {
   font-size: 120%;
   font-weight: 800;
-  margin: 1.5rem 0 0 0;
+  margin: 1rem 0;
 }
 
 p {
@@ -102,20 +111,31 @@ hr {
     opacity: 0.25;
 }
 
-.footer {
+footer {
+  clear: both;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between !important;
-  width: 96%;
-  padding: .5rem 2%;
-  background-color: #205050;
+  justify-content: space-between;
+  padding: var(--gutter-y) var(--gutter-x);
+  background-color: var(--dark-bg, black);
+  color: var(--on-dark, white);
+}
+
+footer a {
+  color: var(--on-dark, white);
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit; 
+}
+
+footer a:hover {
   color: white;
-  opacity: 0.9;
+  font-weight: 600;
 }
 
 .container {
   max-width: 100%;
-  padding: 0 4%;
+  padding: var(--gutter-y) var(--gutter-x);
   flex-wrap: inherit;
 }
 
@@ -125,22 +145,12 @@ hr {
 }
 
 .form-control {
-  display: block;
-  width: 100%;
-  margin: 0 0.5rem;
-  padding: 0.3rem 0.5rem;
+  font:inherit;
+  width: 10rem;
+  margin: 0.5rem 0.2rem;
+  padding: 0.1rem 0.5rem;
   border: 1px solid silver;
   border-radius: 0.4rem;
-}
-
-button {
-  border-radius: 0;
-
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    text-transform: none;
 }
 
 button:not(:disabled),
@@ -151,21 +161,107 @@ button:not(:disabled),
 }
 
 .btn {
-  display: inline-block;
-  cursor: pointer;
+  font: inherit;
+  color: inherit;
   background-color: transparent;
-  border: 1px solid transparent;
-  padding: 0.4rem 0.75rem;
-  border-radius: 0.4rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  min-width: 6rem;
+  margin: 0.5rem 0.2rem;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  transition: color .3s ease, background-color 0.3s ease, border-color .3s ease;
 }
 
-.btn-search {
-  color: mediumseagreen;
-  border-color: mediumseagreen;
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
-.btn-search:hover {
+.btn:hover,
+.btn:focus {
+  color: var(--dark-bg);
+  background-color: var(--ligh-bg);
+  border-color: var(--ligh-bg);
+  outline: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .5rem var(--gutter-x);
+  background-color: var(--dark-bg, black);
+  color: var(--on-dark, white);
+}
+
+.navbar a {
+  color: var(--on-dark, white);
+  text-decoration: none;
+  /* font-size: inherit;
+  font-family: inherit;  */
+}
+
+.navbar-toggler:hover,
+.navbar a:hover {
   color: white;
-  background-color: seagreen;
+  font-weight: 600;
+}
+
+.navbar-toggler {
+  font: inherit;
+  font-size: inherit;
+  /* line-height: 1rem; */
+  font-family: Calibri;
+  font-weight: 600;
+  display: inline-flex;
+  margin: 0 0.1rem;
+  padding-top: 0.1rem;
+  color: var(--on-dark, white);
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  transition: color .3s ease, background-color 0.3s ease, border-color .3s ease;
+}
+
+.navbar-toggler:hover::after {
+  transform: rotate(-45deg);
+  /* color: var(--dark-bg);
+  background-color: var(--ligh-bg);
+  border-color: var(--ligh-bg); */
+}
+
+.navbar-toggler::after {
+  width: 1.3rem; 
+  content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"> <path stroke="Lavender" stroke-width="1.2" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>');
+  transition: transform .3s ease;
+  transform-origin: 55% 55%;
+}
+
+.navbar-toggler[aria-expanded="true"]::after {
+  transform: rotate(-90deg);
+}
+
+
+.navbar-nav {
+  list-style: none;
+}
+
+.navbar-nav li {
+  margin: .7rem 0;
+}
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
 }

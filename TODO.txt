@@ -12,3 +12,10 @@ email
 deploy
 host & domain
 docker
+login
+اعزام مربی
+کلاس آمادگی جسمانی برای سایر باشگاه‌ها
+integrate with swiss system
+coaches dropdown list
+
+
