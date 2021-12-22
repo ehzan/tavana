@@ -10,14 +10,12 @@ urlpatterns = [
     path('contact/', views.contact),
 
     path('courses/', views.courses),
-    path('free-session/', views.free_session),
-    path('para/', views.para),
+    path('free-session/', views.page, name='free-session'),
+    path('para-tabletennis/', views.page, name='para-tabletennis'),
     path('tournaments/', views.tournaments),
-    path('rating-system/', views.rating_system),
+    path('rating-system/', views.page, name='rating-system'),
 
     path('news/', views.news),
-    # path('videos/', views.videos),
-    # path('live/', views.live),
 
     path('files/<str:filename>', views.file_delivery, name='file'),
 ]

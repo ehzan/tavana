@@ -3,7 +3,7 @@
 @import url('font/calibri.css');
 
 :root {
-  --gutter-x: 5%;
+  --gutter-x: 6%;
   --gutter-y: 1rem;
   --dark-bg: #205050;
   --ligh-bg: Lavender;
@@ -28,13 +28,13 @@ body {
 h1 {
   font-size: 140%;
   font-weight: 800;
-  margin: 1.5rem 0;
+  margin: 1rem 0 0;
 }
 
 h2 {
   font-size: 120%;
   font-weight: 800;
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 }
 
 p {
@@ -117,12 +117,12 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: var(--gutter-y) var(--gutter-x);
-  background-color: var(--dark-bg, black);
-  color: var(--on-dark, white);
+  background-color: var(--dark-bg);
+  color: var(--on-dark);
 }
 
 footer a {
-  color: var(--on-dark, white);
+  color: var(--on-dark);
   text-decoration: none;
   font-size: inherit;
   font-family: inherit; 
@@ -186,25 +186,21 @@ button:not(:disabled),
   outline: 0;
 }
 
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
+nav {
   padding: .5rem var(--gutter-x);
-  background-color: var(--dark-bg, black);
-  color: var(--on-dark, white);
+  background-color: var(--dark-bg);
+  color: var(--on-dark);
 }
 
-.navbar a {
-  color: var(--on-dark, white);
-  text-decoration: none;
-  /* font-size: inherit;
-  font-family: inherit;  */
+nav a {
+  color: var(--on-dark);
 }
 
 .navbar-toggler:hover,
-.navbar a:hover {
+nav a:hover {
   color: white;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .navbar-toggler {
@@ -216,7 +212,7 @@ button:not(:disabled),
   display: inline-flex;
   margin: 0 0.1rem;
   padding-top: 0.1rem;
-  color: var(--on-dark, white);
+  color: var(--on-dark);
   background-color: transparent;
   border: 1px solid;
   border-radius: 0.3rem;
@@ -240,7 +236,6 @@ button:not(:disabled),
 .navbar-toggler[aria-expanded="true"]::after {
   transform: rotate(-90deg);
 }
-
 
 .navbar-nav {
   list-style: none;

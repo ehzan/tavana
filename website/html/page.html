@@ -1,7 +1,7 @@
 {% extends 'template.html' %}
 {% load static %}
 
-{% block title %}پارا تنیس روی میز{% endblock %}
+{% block title %} {{ data.title }} {% endblock %}
 
 {% block style&script %}
 <link rel=stylesheet type="text/css" href="/static/pages.css">
@@ -12,5 +12,4 @@
     <h1>{{ data.title }}</h1>
     {{ data.content|safe|linebreaks }}
 </div>
-<br>
 {% endblock %}

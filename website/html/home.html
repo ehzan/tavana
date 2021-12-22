@@ -6,6 +6,62 @@
 {% block style&script %}
 <!-- <link rel=stylesheet type="text/css" href="/static/bootstrap.rtl.css"> -->
 <link rel=stylesheet type="text/css" href="/static/carousel.css">
+
+<style>
+    .row-cols-3 {
+        --x-gutter: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row-cols-3>* {
+        --col-width: 33.3%;
+        width: calc(var(--col-width) - 2 * var(--x-gutter));
+        margin: 0 var(--x-gutter);
+    }
+
+    @media (max-width: 992px) {
+        .row-cols-3>* {
+            --col-width: 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .row-cols-3>* {
+            --col-width: 100%;
+        }
+    }
+</style>
+<style>
+    .bg-primary {
+        background-color: rgb(13, 110, 253);
+        background-color: dodgerblue;
+        background-color: royalblue;
+    }
+
+    .feature-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1rem;
+        margin: 1rem 0 0;
+        font-size: 2rem;
+        color: white;
+        background-color: teal;
+    }
+
+    .link-icon {
+        display: inline-flex;
+        /* align-items: center; */
+    }
+
+    .link-icon:hover>.bi {
+        transition: transform .3s ease;
+        transform: translate(-0.2rem);
+    }
+</style>
 {% endblock %}
 
 {% block main %}
@@ -19,14 +75,14 @@
     </button>
 
     <div class="carousel-indicators">
-        {% for highlight in highlights %}
+        {% for highlight in header_items %}
         <button data-bs-target="#myCarousel" data-bs-slide-to="{{ forloop.counter0 }}"
             class="{% if forloop.first %} active {% endif %}"></button>
         {% endfor %}
     </div>
 
     <div class="carousel-inner">
-        {% for highlight in highlights %}
+        {% for highlight in header_items %}
         <div class="carousel-item {% if forloop.first %} active {% endif %}">
             <div style="display: flex; justify-content: space-between; align-items: center; border: solid silver;">
                 <div class="carousel-caption">
@@ -46,38 +102,20 @@
         {% endfor %}
     </div>
 </div>
-
-<div class="container">
-    <h2>تنیس روی میز</h2>
-    <p>
-        تنیس روی میز یا پینگ-پنگ ورزشی است که روی میز انجام می‌شود و دو یا چهار بازیکن در آن مشارکت دارند و هر
-        بازیکن یک راکت دارد و با بهره‌گیری از آن به توپ ضربه می‌زند. در وسط میز یک تور قرار دارد و برخورد توپ با
-        آن تابع قوانین خاصی است. توپ در این ورزش سبک (سفید یا نارنجی رنگ) و توخالی است. جنس میز از چوب و سخت
-        است. تنیس روی میز توسط فدراسیون جهانی تنیس روی میز که در سال ۱۹۲۶ تأسیس شد اداره می‌شود. از سال ۱۹۸۸
-        تنیس روی میز به ورزش‌های المپیک اضافه شد. به خوردن توپ به تور، هنگام زدن سرویس نت می‌گویند، و فواید تنیس
-        روی میز این است که در موقع بازی کردن تنیس روی میز تمام اجزای بدن در حال حرکت هستند: دست، پا،گوش بینی قلب
-        مری نای شش انگشتان دست، سر، چشم و اندام در حال حرکت هستند این بازی باعث می‌شود که تحرک شما بسیار زیاد
-        شود و دو نیمکرهٔ مغز به‌طور هم‌زمان با هم کار کنند.
-    </p>
-    <h2>پیشینه</h2>
-    <p>
-        خاستگاه این بازی در بریتانیا است که در سال‌های ۱۸۹۰–۱۸۸۰ شاهزادگان (زمان ملکه ویکتوریا) طبقهٔ بالا پس از
-        خوردن ناهار برای سرگرمی به آن می‌پرداختند. گویا در آن زمان آن‌ها ترجیح می‌دادند تا به جای آنکه در زیر
-        آفتاب تنیس بازی کنند به انجام ورزشی بپردازند که در زیر سقف باشد، پس تنیس روی میز را ساختند.در برخی
-        کشورهای انگلیسی زبان، دانشگاه‌ها و مدارس و مراکز ورزشی از به کار بردن واژهٔ پینگ پنگ برای این رشتهٔ
-        ورزشی منع شده‌اند و به جای آن باید از تنیس روی میز استفاده کنند. دلیل آن هم لفظ واژهٔ پینگ پنگ است که در
-        گذشته برای تمسخر یا تحقیر ساکنان شرق آسیا استفاده می‌شده‌است و دارای بار نژادپرستی است. همچنین گفته
-        می‌شود که تنیس روی میز نام ورزش است ولی پینگ پنگ نام یک برند آمریکایی است که در سال ۱۹۰۱ ثبت شده و در
-        وبسایت خود نیز به تفاوت تعریف تنیس روی میز و پینگ پنگ پرداخته‌است.
-    </p>
-    <h2>چگونگی بازی</h2>
-    <p>
-        پس از ضربهٔ سرویس که می‌بایست در نیمهٔ زمین فرد آغازگر بر زمین بخورد٫ در ضربه‌های بعدی توپ باید فقط در
-        نیمهٔ زمین طرف مقابل به زمین بخورد. دو نیمهٔ زمین با یک تور از هم جدا شده‌اند. اگر توپ در زمین حریف فرود
-        نیاید یک امتیاز به حریف اضافه می‌شود و اگر توپ در زمین حریف فرود آید و پس از آن حریف نتواند توپ را به
-        زمین طرف مقابل بزند یک امتیاز به فردی که ضربه را زده افزوده می‌شود. اگر در ضربه اول، توپ پس از اینکه به
-        زمین‌خورد، به تور بخورد و سپس در زمین حریف اصابت کند «نت» حساب می‌شود و فردی که آغازگر است باید دوباره
-        ضربه را بزند و هیچ امتیازی برای کسی حساب نمی‌شود
-    </p>
+<!-- body -->
+<div class="container" style="border: solid tomato;">
+    <div class="row-cols-3">
+        {% for item in body_items %}
+        <div>
+            <div class="feature-icon"> {{ item.icon|safe }} </div>
+            <h2> {{ item.title }} </h2>
+            <p> {{ item.content|safe|linebreaks }} </p>
+            {% if item.link %}
+            <a href="{{ item.link }}" class="link-icon"> {{ item.link_caption }}
+                <i class="bi bi-chevron-left"></i> </a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

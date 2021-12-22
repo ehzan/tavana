@@ -28,8 +28,9 @@
 
   @media (max-width: 768px) {
     .container figure {
+        width: auto;
         display: block;
-        margin: 1.5rem 0;
+        margin: 1rem;
     }
 
     .container {

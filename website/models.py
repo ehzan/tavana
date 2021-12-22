@@ -5,6 +5,20 @@ import jdatetime
 # Create your models here.
 
 
+class Contact(models.Model):
+    name = models.CharField(max_length=50)
+    value = models.CharField(max_length=1000, null=True, blank=True)
+    icon = models.CharField(max_length=1000, null=True, blank=True)
+    link = models.CharField(max_length=1000, null=True, blank=True)
+    order = models.IntegerField(default=10)
+
+    class Meta:
+        ordering = ['order', ]
+
+    def __str__(self):
+        return self.name
+
+
 class Coach(models.Model):
     english_name = models.CharField(max_length=50, unique=True)
     persian_name = models.CharField(max_length=50, unique=True)
@@ -101,7 +115,7 @@ class News(models.Model):
         return self.title
 
 
-class video(models.Model):
+class Video(models.Model):
     title = models.CharField(max_length=1000, unique=True)
     description = models.TextField(null=True, blank=True)
     link = models.CharField(max_length=1000, null=True, blank=True)

@@ -18,48 +18,44 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div>
-            <a style="font-size: 120%;" href="/">
-                <i class="bi bi-house-door"></i>
-                <!-- <i class="bi bi-house"></i> -->
-            </a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarAbout">
-                معرفی توانا
-            </button>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarServices">
-                خدمات
-            </button>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNews">
-                اخبار
-            </button>
-            <div class="collapse" id="navbarAbout">
-                <ul class="navbar-nav">
-                    <li><a href="/about">معرفی</a></li>
-                    <li><a href="/coaches">مربیان</a></li>
-                    <li><a href="/">بازیکنان</a></li>
-                    <li><a href="/contact">راه‌های تماس</a></li>
-                </ul>
-            </div>
-            <div class="collapse" id="navbarServices">
-                <ul class="navbar-nav">
-                    <li><a href="/courses">کلاس‌های توانا</a></li>
-                    <li><a href="/para">ویژه معلولان</a></li>
-                    <li><a href="/free-session">سانس آزاد</a></li>
-                    <li><a href="/">اعزام مربی</a></li>
-                    <li><a href="/">آمادگی جسمانی تخصصی</a></li>
-                    <li><a href="/tournaments">مسابقات هفتگی</a></li>
-                    <li><a href="/rating-system">سیستم ریتینگ</a></li>
-                </ul>
-            </div>
-            <div class="collapse" id="navbarNews">
-                <ul class="navbar-nav">
-                    <li><a href="/news">اخبار و اطلاعیه‌ها</a></li>
-                    <li><a href="/live">نتایج زنده</a></li>
-                    <li><a href="/videos">ویدئوکست</a></li>
-                </ul>
-            </div>
+    <nav>
+        <a style="font-size: 120%;" href="/">
+            <i class="bi bi-house-door"></i></a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarAbout">
+            معرفی توانا
+        </button>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarServices">
+            خدمات
+        </button>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNews">
+            اخبار
+        </button>
+        <div class="collapse" id="navbarAbout">
+            <ul class="navbar-nav">
+                <li><a href="/about">معرفی</a></li>
+                <li><a href="/coaches">مربیان</a></li>
+                <li><a href="/">بازیکنان</a></li>
+                <li><a href="/contact">راه‌های تماس</a></li>
+            </ul>
+        </div>
+        <div class="collapse" id="navbarServices">
+            <ul class="navbar-nav">
+                <li><a href="/courses">کلاس‌های توانا</a></li>
+                <li><a href="/para-tabletennis">ویژه معلولان</a></li>
+                <li><a href="/free-session">سانس آزاد</a></li>
+                <li><a href="/">اعزام مربی</a></li>
+                <li><a href="/">آمادگی جسمانی تخصصی</a></li>
+                <li><a href="/tournaments">مسابقات هفتگی</a></li>
+                <li><a href="/rating-system">سیستم ریتینگ</a></li>
+            </ul>
+        </div>
+        <div class="collapse" id="navbarNews">
+            <ul class="navbar-nav">
+                <li><a href="/news">اخبار و اطلاعیه‌ها</a></li>
+                <li><a href="/">نتایج زنده</a></li>
+                <li><a href="/">ویدئوکست</a></li>
+            </ul>
+        </div>
     </nav>
     <main>
         {% block main %}

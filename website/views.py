@@ -8,24 +8,25 @@ import jdatetime
 
 
 def home(request):
-    highlights = Highlight.objects.filter(header=True)
-    print(highlights)
-    return render(request, 'home.html', context={'highlights': highlights}, )
+    header_items = Highlight.objects.filter(header=True)
+    body_items = Highlight.objects.filter(body=True)
+    return render(request, 'home.html', context={'header_items': header_items, 'body_items': body_items}, )
 
 
 def get_page_data(pagename):
-    page = Page.objects.get(name=pagename)
-    images = [page.image_filename_1,
-              page.image_filename_2, page.image_filename_3, ]
-    captions = [page.image_caption_1,
-                page.image_caption_2, page.image_caption_3, ]
+    pageData = Page.objects.get(name=pagename)
+    images = [pageData.image_filename_1,
+              pageData.image_filename_2, pageData.image_filename_3, ]
+    captions = [pageData.image_caption_1,
+                pageData.image_caption_2, pageData.image_caption_3, ]
     for i in range(len(images)):
         if images[i] != None:
             print(images[i])
             image_html = '</p> <figure> <img src="/static/images/{}" alt="{}"> <figcaption> {} </figcaption> </figure> <p>' \
                 .format(images[i], images[i], captions[i] if captions[i] != None else '')
-            page.content = page.content.replace('<image>', image_html, 1)
-    return page
+            pageData.content = pageData.content.replace(
+                '<image>', image_html, 1)
+    return pageData
 
 
 def about(request):
@@ -43,7 +44,8 @@ def coaches(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    contacts = Contact.objects.all()
+    return render(request, 'contact.html', context={'contacts': contacts},)
 
 
 def courses(request):
@@ -52,20 +54,13 @@ def courses(request):
     return render(request, 'courses.html', context={'semesters': semesters, 'courses': courses}, )
 
 
-def free_session(request):
-    return render(request, 'free-session.html', context={'data': get_page_data('free-session')}, )
-
-
-def para(request):
-    return render(request, 'para.html', context={'data': get_page_data('para')}, )
+def page(request):
+    pagename = request.resolver_match.url_name
+    return render(request, 'page.html', context={'data': get_page_data(pagename)}, )
 
 
 def tournaments(request):
     return render(request, 'tournaments.html', context={'data': get_page_data('tournaments')}, )
-
-
-def rating_system(request):
-    return render(request, 'rating-system.html', context={'data': get_page_data('rating-system')}, )
 
 
 def news(request):
@@ -73,7 +68,7 @@ def news(request):
     header_items = Highlight.objects.filter(header=True)
     body_items = Highlight.objects.filter(body=True)
     print(header_items)
-    return render(request, 'sidebar.html', context={'header_items': header_items, 'body_items': body_items}, )
+    return render(request, 'news.html', context={'header_items': header_items, 'body_items': body_items}, )
 
 
 def file_delivery(request, filename):

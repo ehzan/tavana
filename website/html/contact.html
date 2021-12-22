@@ -5,6 +5,10 @@
 
 {% block style&script %}
 <style>
+    p {
+        text-indent: 0;
+    }
+
     strong {
         font-size: 107%;
         font-weight: bold;
@@ -27,12 +31,10 @@
     }
 
     .col-lg-5 {
-        flex: 0 0 auto;
         width: 100%;
     }
 
     .map-frame {
-        flex: 0 0 auto;
         margin: 1.5rem 0;
         width: 100%;
         height: 75vh;
@@ -53,46 +55,15 @@
 {% endblock %}
 
 {% block main %}
-<div class="container flex-wrap" style="justify-content:center;">
+<div class="container flex-wrap">
     <div class="col-lg-5">
         <h1>آکادمی پینگ پنگ توانا</h1>
-        <p> <a href="https://goo.gl/maps/fxpGx7f8Jn5qj8Dk6" class="list-a" target=_blank>
-                <i class="list-icon bi-geo-alt"></i>
-                <span>
-                    <strong> آدرس: </strong> <br>
-                    تهران، منطقه ۵، انتهای بزرگراه ستاری شمال، میدان دانشگاه، خیابان شعرا، مجتمع علامه طباطبایی
-                </span>
+        {% for contact in contacts %}
+        <p> <a href="{{ contact.link|safe }}" class="list-a" target=_blank>
+                {{ contact.icon|safe }}
+                <span> <strong> {{ contact.name }}: </strong> <br> {{ contact.value }} </span>
             </a> </p>
-        <p> <a href="tel:+982144822787" class="list-a" target=_blank>
-                <i class="list-icon bi-telephone-inbound"></i>
-                <span>
-                    <strong> تلفن: </strong> <br>
-                    021-44822787
-                </span>
-            </a> </p>
-        <p> <a href="tel:+989128980720" class="list-a" target=_blank>
-                <i class="list-icon bi-whatsapp"></i>
-                <span>
-                    <strong> تلفن همراه: </strong> <br>
-                    0912-8980720
-                </span>
-            </a> </p>
-        <p> <a href="https://www.instagram.com/tavana_tta/" class="list-a" target=_blank>
-                <i class="list-icon bi-instagram"></i>
-                <span>
-                    <strong> اینستاگرام: </strong> <br>
-                    @tavana_tta
-                </span>
-            </a> </p>
-        <p>
-            <a href="mailto:contact@tavanatta.com" class="list-a" target=_blank style="display: flex;">
-                <i class="list-icon bi-envelope"></i>
-                <span>
-                    <strong> پست الکترونیک: </strong> <br>
-                    contact[at]tavanatta.com
-                </span>
-            </a>
-        </p>
+        {% endfor %}
     </div>
     <div class="map-frame">
         <iframe
