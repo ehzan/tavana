@@ -1,4 +1,3 @@
-pdf view in browser
 google map
 carousel
 first page
@@ -13,6 +12,8 @@ deploy
 host & domain
 docker
 login
+subscribe
+search
 اعزام مربی
 کلاس آمادگی جسمانی برای سایر باشگاه‌ها
 integrate with swiss system

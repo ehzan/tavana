@@ -5,10 +5,15 @@
 :root {
   --gutter-x: 6%;
   --gutter-y: 1rem;
-  --dark-bg: #205050;
-  --ligh-bg: Lavender;
-  /* #c6e6e6; */
+  --bg-dark: #205050;
+  --bg-light: Lavender;  /* #c6e6e6; */
   --on-dark: Lavender;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
 
 body {
@@ -117,7 +122,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: var(--gutter-y) var(--gutter-x);
-  background-color: var(--dark-bg);
+  background-color: var(--bg-dark);
   color: var(--on-dark);
 }
 
@@ -180,15 +185,15 @@ button:not(:disabled),
 
 .btn:hover,
 .btn:focus {
-  color: var(--dark-bg);
-  background-color: var(--ligh-bg);
-  border-color: var(--ligh-bg);
+  color: var(--bg-dark);
+  background-color: var(--bg-light);
+  border-color: var(--bg-light);
   outline: 0;
 }
 
 nav {
   padding: .5rem var(--gutter-x);
-  background-color: var(--dark-bg);
+  background-color: var(--bg-dark);
   color: var(--on-dark);
 }
 
@@ -221,9 +226,9 @@ nav a:hover {
 
 .navbar-toggler:hover::after {
   transform: rotate(-45deg);
-  /* color: var(--dark-bg);
-  background-color: var(--ligh-bg);
-  border-color: var(--ligh-bg); */
+  /* color: var(--bg-dark);
+  background-color: var(--bg-light);
+  border-color: var(--bg-light); */
 }
 
 .navbar-toggler::after {
@@ -253,10 +258,4 @@ nav a:hover {
   height: 0;
   overflow: hidden;
   transition: height 0.5s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none;
-  }
 }
