@@ -151,20 +151,20 @@
         flex-wrap: wrap;
     }
 
-    .row-cols-3>* {
+    .row-cols-3>div {
         --col-width: 33.3%;
         width: calc(var(--col-width) - 2 * var(--x-gutter));
         margin: 0 var(--x-gutter);
     }
 
     @media (max-width: 992px) {
-        .row-cols-3>* {
+        .row-cols-3>div {
             --col-width: 50%;
         }
     }
 
     @media (max-width: 768px) {
-        .row-cols-3>* {
+        .row-cols-3>div {
             --col-width: 100%;
         }
     }

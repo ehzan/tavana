@@ -1,0 +1,61 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %} ویدئوکست {% endblock %}
+
+{% block style&script %}
+<style>
+    .row-cols-3 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row-cols-3>div {
+        --col-width: 100%;
+        width: var(--col-width);
+        margin: 2rem 0;
+    }
+
+    @media (min-width: 768px) {
+        .row-cols-3>div {
+            --col-width: 50%;
+            width: calc(var(--col-width) - var(--gutter-x) / 2);
+        }
+
+        .row-cols-3>div:nth-child(odd) {
+            margin-left: var(--gutter-x);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .row-cols-3>div {
+            --col-width: 33.3%;
+            width: calc(var(--col-width) - var(--gutter-x) * 2 / 3);
+        }
+
+        .row-cols-3>div:nth-child(odd) {
+            margin-left: 0;
+        }
+
+        .row-cols-3>div:nth-child(3n+1),
+        .row-cols-3>div:nth-child(3n+2) {
+            margin-left: var(--gutter-x);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h1> ویدئوکست </h1>
+    <div class="row-cols-3">
+        {% for video in videos %}
+        <div>
+            {{ video.embed_code|safe }}
+            <h3> <i class="bi bi-play-circle"></i> {{ video.title }} </h3>
+            {{ video.description }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

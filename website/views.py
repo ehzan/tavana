@@ -71,6 +71,11 @@ def news(request):
     return render(request, 'news.html', context={'header_items': header_items, 'body_items': body_items}, )
 
 
+def videos(request):
+    videos = Video.objects.all()
+    return render(request, 'videos.html', context={'videos': videos}, )
+
+
 def file_delivery(request, filename):
     filetype, fuck = mimetypes.guess_type('./website/files/'+filename)
     print(filetype)

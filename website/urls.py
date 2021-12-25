@@ -17,6 +17,7 @@ urlpatterns = [
     path('tournaments/', views.tournaments),
 
     path('news/', views.news),
+    path('videos/', views.videos),
 
     path('files/<str:filename>', views.file_delivery, name='file'),
 ]

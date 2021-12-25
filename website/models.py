@@ -117,13 +117,14 @@ class News(models.Model):
 
 class Video(models.Model):
     title = models.CharField(max_length=1000, unique=True)
+    embed_code = models.CharField(max_length=1000, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    link = models.CharField(max_length=1000, null=True, blank=True)
     order = models.IntegerField(default=10)
-    date = jmodels.jDateField(null=True, default=jdatetime.date.today())
+    datetime = jmodels.jDateTimeField(
+        null=True, default=jmodels.jdatetime.datetime.now)
 
     class Meta:
-        ordering = ['order', 'date', ]
+        ordering = ['order', '-datetime', ]
 
     def __str__(self):
         return self.title

@@ -14,9 +14,8 @@ docker
 login
 subscribe
 search
-اعزام مربی
 کلاس آمادگی جسمانی برای سایر باشگاه‌ها
 integrate with swiss system
 coaches dropdown list
-
+lazyloading videos & news
 
