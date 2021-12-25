@@ -5,41 +5,34 @@
 
 {% block style&script %}
 <style>
+    :root {
+        --gutter-x: 3%
+    }
+
+    h1 {
+        margin-right: var(--gutter-x);
+    }
+
     .row-cols-3 {
         display: flex;
         flex-wrap: wrap;
     }
 
     .row-cols-3>div {
-        --col-width: 100%;
-        width: var(--col-width);
-        margin: 2rem 0;
+        --col-width: 33.3%;
+        width: calc(var(--col-width) - var(--gutter-x) * 2);
+        margin: 2rem var(--gutter-x);
     }
 
-    @media (min-width: 768px) {
+    @media (max-width: 992px) {
         .row-cols-3>div {
             --col-width: 50%;
-            width: calc(var(--col-width) - var(--gutter-x) / 2);
-        }
-
-        .row-cols-3>div:nth-child(odd) {
-            margin-left: var(--gutter-x);
         }
     }
 
-    @media (min-width: 992px) {
+    @media (max-width: 768px) {
         .row-cols-3>div {
-            --col-width: 33.3%;
-            width: calc(var(--col-width) - var(--gutter-x) * 2 / 3);
-        }
-
-        .row-cols-3>div:nth-child(odd) {
-            margin-left: 0;
-        }
-
-        .row-cols-3>div:nth-child(3n+1),
-        .row-cols-3>div:nth-child(3n+2) {
-            margin-left: var(--gutter-x);
+            --col-width: 100%;
         }
     }
 </style>
