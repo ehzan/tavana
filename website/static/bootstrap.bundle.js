@@ -1686,8 +1686,6 @@
       }
     } // Getters
 
-
-
     static get Default() {
       return Default$9;
     }
@@ -1695,7 +1693,6 @@
     static get NAME() {
       return NAME$a;
     } // Public
-
 
     toggle() {
 
@@ -1706,15 +1703,13 @@
       }
     }
 
-
+    //customised
     show() {
-      const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$4);
-      toggleList.forEach(elem => {
-        const collpaserList = SelectorEngine.find(getSelectorFromElement(elem));
-        Collapse.getOrCreateInstance(collpaserList[0], {
-          toggle: false
-        }).hide();
-      });
+      // console.log('customised');
+      if (this._element.parentNode.tagName == 'NAV') {
+        const toggleList = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE}`, this._element.parentNode);
+        toggleList.forEach(elem => { Collapse.getOrCreateInstance(elem, { toggle: false }).hide(); });
+      }
 
       if (this._isTransitioning || this._isShown()) {
         return;
@@ -2566,7 +2561,6 @@
     };
   } // eslint-disable-next-line import/no-unused-modules
 
-
   var eventListeners = {
     name: 'eventListeners',
     enabled: true,
@@ -3080,7 +3074,6 @@
     }
   } // eslint-disable-next-line import/no-unused-modules
 
-
   var flip$1 = {
     name: 'flip',
     enabled: true,
@@ -3142,7 +3135,6 @@
     });
   } // eslint-disable-next-line import/no-unused-modules
 
-
   var hide$1 = {
     name: 'hide',
     enabled: true,
@@ -3194,7 +3186,6 @@
     state.modifiersData[name] = data;
   } // eslint-disable-next-line import/no-unused-modules
 
-
   var offset$1 = {
     name: 'offset',
     enabled: true,
@@ -3217,7 +3208,6 @@
       placement: state.placement
     });
   } // eslint-disable-next-line import/no-unused-modules
-
 
   var popperOffsets$1 = {
     name: 'popperOffsets',

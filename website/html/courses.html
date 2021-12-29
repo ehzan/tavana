@@ -3,24 +3,105 @@
 
 {% block title %}کلاس‌های آکادمی توانا{% endblock %}
 
+{% block style&script %}
+
+<style>
+    .accordion-button {
+        background-color: white;
+        border: 0;
+        font: inherit;
+        display: flex;
+        /* align-items: center; */
+        width: 100%;
+        padding: 0.5rem 1rem;
+        /* overflow-anchor: none; */
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: #e7f1ff;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        transform: rotate(180deg);
+    }
+
+    .accordion-button::after {
+        /* border: solid tomato; */
+        padding: 0;
+        width: 1rem;
+        height: 1rem;
+        margin-right: auto;
+        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"> <path stroke="currentColor" stroke-width="1.2" fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/> </svg>');
+        transition: transform 0.3s ease;
+        transform-origin: 50% 80%;
+
+    }
+
+    .accordion-body {
+        padding: 1rem 2rem;
+    }
+
+    .accordion-item {
+        border: 1px solid silver;
+        max-width: 30rem;
+    }
+
+    .accordion-item:first-of-type,
+    .accordion-item:first-of-type .accordion-button {
+        border-top-right-radius: 0.3rem;
+        border-top-left-radius: 0.3rem;
+    }
+
+    .accordion-item:not(:first-of-type) {
+        border-top: 0 !important;
+    }
+
+    .accordion-item:last-of-type,
+    .accordion-item:last-of-type .accordion-button.collapsed {
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    }
+
+    /* .accordion-item:last-of-type .accordion-collapse {
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    } */
+
+    .collapse:not(.show) {
+        display: none;
+    }
+
+    .collapsing {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease;
+    }
+</style>
+<!-- <script src="/static/bootstrap.bundle2.js"></script> -->
+
+{% endblock %}
+
 {% block main %}
 <div class="container">
     <h1>تقویم آموزشی آکادمی توانا</h1>
     <img src="/static/images/calendar.png" style="max-width: 100%; margin: 1.5rem 0;">
     {% for smeseter in semesters %}
-    <p> کلاس‌های آموزشی آکادمی توانا در {{ smeseter.title }} به قرار زیر است:
-    </p>
-    <ul>
-        {% for course in courses %}
-        {% if course.semester == smeseter %}
-        <li>
+    <p> کلاس‌های آموزشی آکادمی توانا در {{ smeseter.title }} به قرار زیر است: </p>
+    {% for course in courses %}
+    {% if course.semester == smeseter %}
+    <div class="accordion-item">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item{{ course.id }}">
             {{ course.title }}
-            <div style="margin-top: -1rem;">{{ course.description|safe|linebreaks }}</div>
-        </li>
-        {% endif %}
-        {% endfor %}
-    </ul>
+        </button>
+        <div id="item{{ course.id }}" class="accordion-collapse collapse">
+            <div class="accordion-body">
+                {{ course.description|safe|linebreaks }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
 </div>
-<br>
 {% endblock %}

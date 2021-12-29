@@ -5,12 +5,13 @@
 
 {% block style&script %}
 <style>
-    :root {
-        --gutter-x: 3%
+    .container {
+        padding-left: calc(var(--gutter-x)/2);
+        padding-right: calc(var(--gutter-x)/2);
     }
 
     h1 {
-        margin-right: var(--gutter-x);
+        margin-right: calc(var(--gutter-x)/2);
     }
 
     .row-cols-3 {
@@ -20,11 +21,11 @@
 
     .row-cols-3>div {
         --col-width: 33.3%;
-        width: calc(var(--col-width) - var(--gutter-x) * 2);
-        margin: 2rem var(--gutter-x);
+        width: calc(var(--col-width) - var(--gutter-x));
+        margin: 2rem calc(var(--gutter-x)/2);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1200px) {
         .row-cols-3>div {
             --col-width: 50%;
         }

@@ -5,7 +5,6 @@
 
 {% block style&script %}
 <!-- <link rel=stylesheet type="text/css" href="/static/bootstrap.rtl.css"> -->
-<!-- <link rel=stylesheet type="text/css" href="/static/carousel.css"> -->
 
 <style>
     :root {
@@ -78,13 +77,13 @@
         /* position: relative; */
         width: 100%;
         overflow: hidden;
-        margin: 0rem 0 2rem 0;
+        margin: 0 0 2rem 0;
     }
 
     .carousel-item {
         display: none;
         align-items: center;
-        height: 15rem;
+        height: 16rem;
         width: 100%;
         float: right;
         margin-left: -100%;
@@ -121,14 +120,13 @@
         margin: 0;
         margin-left: var(--arrow-block-width);
         margin-right: 2rem;
-        width: 60%;
-        /* height: 10rem; */
+        width: 50%;
     }
 
     .img-block img {
         width: 100%;
         height: auto;
-        border-radius: 0.5rem;
+        border-radius: 0.1rem;
     }
 
     @media (max-width: 768px) {
@@ -138,7 +136,7 @@
         }
 
         .img-block {
-            display: none;
+            display: none !important;
         }
     }
 </style>
@@ -153,11 +151,11 @@
 
     .row-cols-3>div {
         --col-width: 33.3%;
-        width: calc(var(--col-width) - 2 * var(--x-gutter));
-        margin: 0 var(--x-gutter);
+        width: calc(var(--col-width) - var(--gutter-x));
+        margin: 0.5rem calc(var(--gutter-x)/2);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1200px) {
         .row-cols-3>div {
             --col-width: 50%;
         }
@@ -227,8 +225,8 @@
                 {% endif %}
             </div>
             {% if highlight.image_filename %}
-            <div class="img-block">
-                <img src="{% static 'images/' %}{{ highlight.image_filename }}">
+            <div class="img-block" style="border: solid 0px springgreen;">
+                <img src="/static/images/{{ highlight.image_filename }}">
             </div>
             {% endif %}
         </div>
@@ -240,7 +238,8 @@
     <div class="row-cols-3">
         {% for item in body_items %}
         <div>
-            <div class="feature-icon"> {{ item.icon|safe }} </div>
+            <!-- <div class="flex-wrap" style="align-items: center;"> -->
+            <div class="feature-icon"> {{ item.icon|safe }} </div> &nbsp;&nbsp;&nbsp;&nbsp;
             <h2> {{ item.title }} </h2>
             <p> {{ item.content|safe|linebreaks }} </p>
             {% if item.link %}

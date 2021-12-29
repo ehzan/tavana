@@ -122,6 +122,7 @@ class Video(models.Model):
     order = models.IntegerField(default=10)
     datetime = jmodels.jDateTimeField(
         null=True, default=jmodels.jdatetime.datetime.now)
+    hidden=models.BooleanField(default=False)
 
     class Meta:
         ordering = ['order', '-datetime', ]
