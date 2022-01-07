@@ -270,8 +270,7 @@
             {% endif %}
         </div>
         {% endfor %}
-    </div>
-    <br>
+    </div> <br>
     <hr>
     <h1 style="text-align: center;"> مربیان آکادمی توانا </h1>
     <div class="flex-wrap">
@@ -279,7 +278,7 @@
         <div style="text-align: center; margin: 0.5rem auto;">
             <a href="/coaches#{{ coach.english_name }}">
                 <img src="/static/images/{{coach.english_name}}.jpg" alt="{{ coach.english_name }}" class="img-rounded">
-                <h2>{{ coach.persian_name }}</h2>
+                <h3>{{ coach.persian_name }}</h3>
             </a>
         </div>
         {% endfor %}
