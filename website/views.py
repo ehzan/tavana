@@ -1,16 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from website.models import *
+from os import listdir, path
 import mimetypes
 import jdatetime
+import random
+import re
 
 # Create your views here.
 
 
 def home(request):
+    header_local_path = './website/static/headers/'
+    header_web_path = '/static/headers/'
+    header_bgs = [header_web_path+bg for bg in listdir(header_local_path)
+                  if path.isfile(header_local_path+bg) and re.search('.jpg$', bg)]
+    header_bg = random.choice(header_bgs)
+    # if path.isfile(sequencePath+file) and re.search('.dcm$', file)
     header_items = Highlight.objects.filter(header=True)
     body_items = Highlight.objects.filter(body=True)
-    return render(request, 'home.html', context={'header_items': header_items, 'body_items': body_items}, )
+    coaches = Coach.objects.all()
+
+    return render(request, 'home.html',
+                  context={'header_bg': header_bg, 'header_items': header_items, 'body_items': body_items, 'coaches': coaches}, )
 
 
 def get_page_data(pagename):

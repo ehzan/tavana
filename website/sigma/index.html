@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.rtl.css">
+    <link rel="stylesheet" type="text/css" href="css/ekko-lightbox.min.css">
+    <!--    <link rel="stylesheet" type="text/css" href="css/ekko-lightbox-dark.css"> -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .sigmapad {
+            padding: 0.5px !important;
+        }
+
+        @media (min-width:544px) {
+
+            .col-sm-1,
+            .col-sm-10,
+            .col-sm-11,
+            .col-sm-12,
+            .col-sm-2,
+            .col-sm-3,
+            .col-sm-4,
+            .col-sm-5,
+            .col-sm-6,
+            .col-sm-7,
+            .col-sm-8,
+            .col-sm-9 {
+                float: left !important;
+            }
+
+            .col-sm-1 {
+                width: 8.333333%
+            }
+
+            .col-sm-2 {
+                width: 16.666667%
+            }
+
+            .col-sm-3 {
+                width: 25%
+            }
+
+            .col-sm-4 {
+                width: 33.333333%
+            }
+
+            .col-sm-5 {
+                width: 41.666667%
+            }
+
+            .col-sm-6 {
+                width: 50%
+            }
+
+            .col-sm-7 {
+                width: 58.333333%
+            }
+
+            .col-sm-8 {
+                width: 66.666667%
+            }
+
+            .col-sm-9 {
+                width: 75%
+            }
+
+            .col-sm-10 {
+                width: 83.333333%
+            }
+
+            .col-sm-11 {
+                width: 91.666667%
+            }
+
+            .col-sm-12 {
+                width: 100%
+            }
+        }
+
+        @media (min-width:768px) {
+
+            .col-md-1,
+            .col-md-10,
+            .col-md-11,
+            .col-md-12,
+            .col-md-2,
+            .col-md-3,
+            .col-md-4,
+            .col-md-5,
+            .col-md-6,
+            .col-md-7,
+            .col-md-8,
+            .col-md-9 {
+                float: left !important;
+            }
+
+            .col-md-1 {
+                width: 8.333333%
+            }
+
+            .col-md-2 {
+                width: 16.666667%
+            }
+
+            .col-md-3 {
+                width: 25%
+            }
+
+            .col-md-4 {
+                width: 33.333333%
+            }
+
+            .col-md-5 {
+                width: 41.666667%
+            }
+
+            .col-md-6 {
+                width: 50%
+            }
+
+            .col-md-7 {
+                width: 58.333333%
+            }
+
+            .col-md-8 {
+                width: 66.666667%
+            }
+
+            .col-md-9 {
+                width: 75%
+            }
+
+            .col-md-10 {
+                width: 83.333333%
+            }
+
+            .col-md-11 {
+                width: 91.666667%
+            }
+
+            .col-md-12 {
+                width: 100%
+            }
+        }
+
+        @media (min-width:992px) {
+
+            .col-lg-1,
+            .col-lg-10,
+            .col-lg-11,
+            .col-lg-12,
+            .col-lg-2,
+            .col-lg-3,
+            .col-lg-4,
+            .col-lg-5,
+            .col-lg-6,
+            .col-lg-7,
+            .col-lg-8,
+            .col-lg-9 {
+                float: left !important;
+            }
+
+            .col-lg-1 {
+                width: 8.333333%
+            }
+
+            .col-lg-2 {
+                width: 16.666667%
+            }
+
+            .col-lg-3 {
+                width: 25%
+            }
+
+            .col-lg-4 {
+                width: 33.333333%
+            }
+
+            .col-lg-5 {
+                width: 41.666667%
+            }
+
+            .col-lg-6 {
+                width: 50%
+            }
+
+            .col-lg-7 {
+                width: 58.333333%
+            }
+
+            .col-lg-8 {
+                width: 66.666667%
+            }
+
+            .col-lg-9 {
+                width: 75%
+            }
+
+            .col-lg-10 {
+                width: 83.333333%
+            }
+
+            .col-lg-11 {
+                width: 91.666667%
+            }
+
+            .col-lg-12 {
+                width: 100%
+            }
+        }
+
+        * {
+            box-sizing: border-box !important;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            :root {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="gallery">
+
+        <div class="container-fluid">
+
+            <div style="flex-wrap: wrap;">
+
+                <a href="images/tm-sigma-01.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 01">
+                    <img src="images/tm-sigma-01.jpg" alt="Image 1"
+                        class="img-fluid sigmapad col-lg-4 col-md-6 col-sm-6"></a>
+
+                <a href="images/tm-sigma-02.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 02"
+                    data-footer="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non nunc dictum.">
+                    <img src="images/tm-sigma-02.jpg" alt="Image 2"
+                        class="img-fluid sigmapad col-lg-4 col-md-6 col-sm-6"></a>
+
+                <a href="images/tm-sigma-02.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 03">
+                    <img src="images/tm-sigma-03.jpg" alt="Image 3"
+                        class="img-fluid sigmapad col-lg-4 col-md-8 col-sm-12"></a>
+
+                <a href="images/tm-sigma-04.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 04"
+                    data-footer="Aenean et tortor nec odio tempor volutpat nec in dui. Etiam libero turpis, accumsan nec.">
+                    <img src="images/tm-sigma-04.jpg" alt="Image 4"
+                        class="img-fluid sigmapad col-lg-8 col-md-4 col-sm-6"></a>
+
+                <a href="images/tm-sigma-05.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 05">
+                    <img src="images/tm-sigma-05.jpg" alt="Image 5"
+                        class="img-fluid sigmapad col-lg-4 col-md-4 col-sm-6"></a>
+
+                <a href="images/tm-sigma-06.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 06">
+                    <img src="images/tm-sigma-06.jpg" alt="Image 6" class="img-fluid sigmapad col-lg-4"
+                        title="Bicycle"></a>
+
+
+                <a href="images/tm-sigma-07.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 07">
+                    <img src="images/tm-sigma-07.jpg" alt="Image 7" class="img-fluid sigmapad col-sm-6"
+                        title="Walking"></a>
+
+                <a href="images/tm-sigma-08.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 08">
+                    <img src="images/tm-sigma-08.jpg" alt="Image 8" class="img-fluid sigmapad col-sm-6"
+                        title="Camera"></a>
+
+                <a href="images/tm-sigma-01.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 09">
+                    <img src="images/tm-sigma-01.jpg" alt="Image 9"
+                        class="img-fluid sigmapad col-lg-3 col-md-8 col-sm-12"></a>
+
+
+                <a href="images/tm-sigma-02.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 10">
+                    <img src="images/tm-sigma-02.jpg" alt="Image 10"
+                        class="img-fluid sigmapad col-lg-3 col-md-4 col-sm-6"></a>
+
+                <a href="images/tm-sigma-03.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 11">
+                    <img src="images/tm-sigma-03.jpg" alt="Image 11"
+                        class="img-fluid sigmapad col-lg-3 col-md-4 col-sm-6"></a>
+
+                <a href="images/tm-sigma-04.jpg" data-toggle="lightbox" data-gallery="sigma-gallery"
+                    data-title="Image Title 12">
+                    <img src="images/tm-sigma-04.jpg" alt="Image 12" class="img-fluid sigmapad col-lg-3 col-sm-12"></a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ekko-lightbox.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script>
+
+        // Prevent console.log from generating errors in IE for the purposes of the demo
+        if (!window.console) console = { log: function () { } };
+
+        // The actual plugin
+        $('.single-page-nav').singlePageNav({
+            offset: $('.single-page-nav').outerHeight(),
+            filter: ':not(.external)',
+            updateHash: true,
+            beforeStart: function () {
+                console.log('begin scrolling');
+            },
+            onComplete: function () {
+                console.log('done scrolling');
+            }
+        });
+
+        $(document).ready(function ($) {
+
+            // delegate calls to data-toggle="lightbox"
+            $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+                event.preventDefault();
+                return $(this).ekkoLightbox({
+                    always_show_close: true
+                });
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

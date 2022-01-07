@@ -3,11 +3,15 @@
 @import url('font/calibri.css');
 
 :root {
-  --gutter-x: 6%;
+  --gutter-x: 5%;
   --gutter-y: 1rem;
-  --bg-dark: #205050;
+  --bg-dark: #050505; /* #205050; */
   --bg-light: Lavender;  /* #c6e6e6; */
   --on-dark: Lavender;
+}
+
+* {
+  box-sizing: border-box !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -217,11 +221,11 @@ nav a:hover {
   font-family: Calibri;
   font-weight: 600;
   display: inline-flex;
-  margin: 0 0.1rem;
+  margin: 0 !important;
   padding-top: 0.1rem;
   color: var(--on-dark);
   background-color: transparent;
-  border: 1px solid;
+  border: 0px solid;
   border-radius: 0.3rem;
   transition: color .3s ease, background-color 0.3s ease, border-color .3s ease;
 }
@@ -234,7 +238,7 @@ nav a:hover {
 }
 
 .navbar-toggler::after {
-  width: 1.3rem; 
+  width: 1.2rem; 
   content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"> <path stroke="Lavender" stroke-width="1.2" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/> </svg>');
   transition: transform .3s ease;
   transform-origin: 55% 55%;
