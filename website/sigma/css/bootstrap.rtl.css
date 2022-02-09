@@ -4905,7 +4905,6 @@ textarea.form-control-lg {
   list-style-type: none;
   counter-reset: section;
 }
-
 .list-group-numbered > li::before {
   content: counters(section, ".") ". ";
   counter-increment: section;
