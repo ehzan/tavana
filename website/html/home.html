@@ -283,5 +283,19 @@
         </div>
         {% endfor %}
     </div>
+    <hr>
+    <h1 style="text-align: center;"> آخرین مطالب وبلاگ </h1>
+<div class="container">
+        {% for article in articles %}
+        <div>
+            <h2> {{ article.title }} </h2>
+            <p> {{ article.content|safe|linebreaks|truncatewords_html:100}}
+                <a href="../article/{{ article.id}}" class="link-icon"> ادامه </a>
+            </p>
+        </div>
+
+        {% endfor %}
+</div>
+
 </div>
 {% endblock %}

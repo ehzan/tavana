@@ -20,9 +20,10 @@ def home(request):
     header_items = Highlight.objects.filter(header=True)
     body_items = Highlight.objects.filter(body=True)
     coaches = Coach.objects.all()
+    articles = Article.objects.all()
 
     return render(request, 'home.html',
-                  context={'header_bg': header_bg, 'header_items': header_items, 'body_items': body_items, 'coaches': coaches}, )
+                  context={'header_bg': header_bg, 'header_items': header_items, 'body_items': body_items, 'coaches': coaches, 'articles': articles}, )
 
 
 def get_page_data(pagename):
@@ -75,12 +76,14 @@ def tournaments(request):
     return render(request, 'tournaments.html', context={'data': get_page_data('tournaments')}, )
 
 
-def news(request):
+def articles(request):
     print(jdatetime.date.today())
-    header_items = Highlight.objects.filter(header=True)
-    body_items = Highlight.objects.filter(body=True)
-    print(header_items)
-    return render(request, 'news.html', context={'header_items': header_items, 'body_items': body_items}, )
+    articles = Article.objects.all()
+    return render(request, 'articles.html', context={'articles': articles, }, )
+
+def article(request, id):
+    article=Article.objects.get(pk=id)
+    return render(request, 'page.html', context={'data': article}, )
 
 
 def videos(request):

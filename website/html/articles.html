@@ -1,7 +1,7 @@
 {% extends 'template.html' %}
 {% load static %}
 
-{% block title %}پارا تنیس روی میز{% endblock %}
+{% block title %}مقالات و اخبار{% endblock %}
 
 {% block style&script %}
 <link rel=stylesheet type="text/css" href="/static/pages.css">
@@ -70,18 +70,15 @@
 
 {% block main %}
 <div class="container">
-    <div class="row-cols-3">
-        {% for item in body_items %}
+        {% for article in articles %}
         <div>
-            <div class="feature-icon"> {{ item.icon|safe }} </div>
-            <h2> {{ item.title }} </h2>
-            <p> {{ item.content|safe|linebreaks }} </p>
-            {% if item.link %}
-            <a href="{{ item.link }}" class="link-icon"> {{ item.link_caption }}
-                <i class="bi bi-chevron-left"></i> </a>
-            {% endif %}
+            <h2> {{ article.title }} </h2>
+            <p> {{ article.content|safe|linebreaks|truncatewords_html:100}}
+                <a href="../article/{{ article.id}}" class="link-icon"> ادامه </a>
+            </p>
+        <hr>
         </div>
+
         {% endfor %}
-    </div>
 </div>
 {% endblock %}

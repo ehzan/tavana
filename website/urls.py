@@ -16,7 +16,9 @@ urlpatterns = [
     path('para-tabletennis/', views.page, name='para-tabletennis'),
     path('tournaments/', views.tournaments),
 
-    path('news/', views.news),
+    path('articles/', views.articles),
+    path('article/<str:id>', views.article, name='article'),
+
     path('videos/', views.videos),
 
     path('files/<str:filename>', views.file_delivery, name='file'),

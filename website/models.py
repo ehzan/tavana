@@ -95,20 +95,14 @@ class Page(models.Model):
         return self.name
 
 
-class News(models.Model):
+class Article(models.Model):
     title = models.CharField(max_length=1000)
     content = models.TextField(null=True, blank=True)
     order = models.IntegerField(default=10)
     date = jmodels.jDateField(null=True, default=jdatetime.date.today())
-    image_filename_1 = models.CharField(max_length=50, null=True, blank=True)
-    image_caption_1 = models.CharField(max_length=1000, null=True, blank=True)
-    image_filename_2 = models.CharField(max_length=50, null=True, blank=True)
-    image_caption_2 = models.CharField(max_length=1000, null=True, blank=True)
-    image_filename_3 = models.CharField(max_length=50, null=True, blank=True)
-    image_caption_3 = models.CharField(max_length=1000, null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = "News"
+        verbose_name_plural = "Articles"
         ordering = ['order', 'date', ]
 
     def __str__(self):
